@@ -1,0 +1,38 @@
+mat-card {
+  max-width: 375px;
+  max-height: 600px;
+  height: 100%;
+  gap: 10px;
+
+  & > mat-card-header {
+    height: 100px;
+    max-height: 300px;
+    display: flex;
+    gap: 5px;
+
+    .header-image-div {
+      padding-top: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 50px;
+    
+      .header-image {
+        background-size: contain;
+      }
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  & > mat-card-content > p {
+    color: whitesmoke;
+    font-size: 1.01rem;
+    height: 100px;
+    max-height: 300px;
+  }
+}

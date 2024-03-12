@@ -1,0 +1,99 @@
+<mat-card>
+
+  <mat-card-header
+  >
+    <div
+      class="header-image-div"
+    >
+      <img 
+        mat-card-avatar 
+        [src]="
+          recipeInput?.recipe?.user?.profileImage ?
+          recipeInput?.recipe?.user?.profileImage :
+          'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+        "
+        alt="N/A"
+        class="header-image"
+      />
+    </div>
+    
+    <div class="header-text">
+      
+      <mat-card-title
+        class="text-gray-300"
+      >
+        {{ recipeInput?.recipe?.title }}
+      </mat-card-title>
+      
+      <mat-card-subtitle>
+        Shared By: {{ recipeInput?.recipe?.user?.fullName}}
+      </mat-card-subtitle>
+
+    </div>
+  </mat-card-header>
+
+  <div class="w-full h-[300px] max-h-[300px]">
+    <img 
+      mat-card-image 
+      [src]="recipeInput?.recipe?.image" 
+      alt="recipe-image"
+      class="w-full h-full object-cover"
+    >
+  </div>
+
+  <mat-card-content>
+    <p>
+      {{ truncateDesc() }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions class="flex justify-between">
+    <div>
+      <button
+        (click)="likeRecipe()"
+        mat-icon-button
+        [style]="{
+          'color': 
+            !recipeInput?.likedByUser ?
+              'rgb(158, 157, 157)' :
+              'pink'
+        }"
+        aria-label="Favorite Button"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+
+      @if(userId !== null &&
+      recipeInput?.recipe?.user?.id !== null &&
+      userId === recipeInput?.recipe?.user?.id) {
+        <app-update-recipe-form [recipe]="recipeInput"/>
+      }
+
+      @if(recipeInput?.recipe?.recipeLink !== null) {
+        <button
+          (click)="goToRecipeLink()" 
+          mat-icon-button 
+          color="accent"
+        >
+          <mat-icon>link</mat-icon>
+        </button>
+      }
+    </div>
+
+    @if(
+      userId !== null &&
+      recipeInput?.recipe?.user?.id !== null &&
+      userId === recipeInput?.recipe?.user?.id
+    ) {
+      <div>
+        <button
+          (click)="deleteRecipe()" 
+          mat-icon-button color="warn" 
+          aria-label="Delete Button"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    }
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,55 @@
+.login-side-bg{
+  perspective: 400px;
+  z-index: 10;
+  flex: 1;
+
+  & > .content {
+    transform-origin: right;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+  }
+}
+
+.animateLoginLeftSide {
+  transform: rotateY(180deg);
+  animation: hideElement 0s linear 0.9s forwards;
+}
+
+.hideLogin {
+  animation: hideElement 0s linear 0.9s both;
+}
+
+.hide-login-no-anim {
+  visibility: hidden;
+}
+
+.showLogin {
+  animation: showElement 0s linear 0.9s both;
+}
+
+.show-login-no-anim {
+  visibility: visible;
+}
+
+.transparent-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(99, 97, 97, 0.5);
+}
+
+.message-primary {
+  text-align: center;
+  color: blanchedalmond;
+  font-family: "Prociono";
+}
+
+.message-sub {
+  color: blanchedalmond;
+}
+
+@media (max-width: 400px) {
+  .login-side-bg {
+    display: none;
+  }
+}

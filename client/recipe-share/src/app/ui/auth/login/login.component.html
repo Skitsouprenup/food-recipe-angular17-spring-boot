@@ -1,0 +1,97 @@
+<div
+  class="flex absolute left-0 top-0 w-[100%] h-[100%] z-20"
+  [ngClass]="{
+    'hideLogin':!mQuery.matches ? hideLogin : false,
+    'hide-login-no-anim': mQuery.matches ? hideLogin : false,
+    'showLogin': !mQuery.matches ? initState ? false : !hideLogin : false,
+    'show-login-no-anim': mQuery.matches ? initState ? false : !hideLogin : false
+  }"
+>
+
+  <!--Left Side -->
+  <div class="relative login-side-bg">
+
+    <div 
+      class="relative content h-full"
+      [ngClass]="{'animateLoginLeftSide': !mQuery.matches ? hideLogin : false}"
+    >
+
+      <img 
+        src="https://images.pexels.com/photos/4946547/pexels-photo-4946547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="login-page-image"
+        class="absolute object-cover h-full w-full"
+      />
+
+      <div class="transparent-bg"></div>
+
+      <div 
+        class="
+          relative flex flex-col h-full
+          items-center justify-center 
+        "
+      >
+        <p class="text-4xl message-primary">
+          Delectable home-cooked food that makes you go wow.
+        </p>
+        <p class="message-sub text-lg">
+          Let's get started!
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--Right Side -->
+  <div
+    class="flex flex-col py-2 justify-center items-center bg-zinc-800 flex-1"
+  >
+  <h1 class="text-zinc-300">Login</h1>
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="loginUser()"
+    class="
+      flex flex-col p-2 w-full
+    ">
+
+    @for(item of inputList; track item) {
+      <mat-form-field class="w-full">
+        <mat-label
+          [attr.for]="item['for']"
+          class="text-gray-300"
+        >
+          {{ item['label'] }}
+        </mat-label>
+        <input
+          class="w-full" 
+          matInput
+          [type]="item['type']"
+          [name]="item['name']"
+          [placeholder]="item['placeholder']"
+          [formControlName]="item['formControlName']"
+        >
+      </mat-form-field>
+    }
+
+    <div class="flex flex-col gap-2 items-center">
+
+      <button 
+        type="submit"
+        class="w-full"
+        mat-flat-button color="accent"
+      >
+        Login
+      </button>
+      <p class="text-white">
+        No account yet? 
+        <span
+          class="hover:underline font-medium text-cyan-500 cursor-pointer"
+          (click)="goToRegisterPage()"
+        >
+          Register here!
+        </span>
+      </p>
+
+    </div>
+  </form>
+</div>
+</div>

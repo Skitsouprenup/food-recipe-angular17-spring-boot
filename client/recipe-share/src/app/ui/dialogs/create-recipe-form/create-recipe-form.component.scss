@@ -1,0 +1,12 @@
+.fixed-button {
+  background-color: rebeccapurple;
+
+}
+
+.fixed-button:hover {
+  background-color: aliceblue;
+}
+
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  margin-left: 16px;
+}

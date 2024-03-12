@@ -1,0 +1,83 @@
+#---Client---
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+client/recipe-share/dist
+client/recipe-share/tmp
+client/recipe-share/out-tsc
+client/recipe-share/bazel-out
+
+# Node
+client/recipe-share/node_modules
+client/recipe-share/npm-debug.log
+client/recipe-share/yarn-error.log
+
+# IDEs and editors
+client/recipe-share/.idea/
+client/recipe-share/.project
+client/recipe-share/.classpath
+client/recipe-share/.c9/
+client/recipe-share/*.launch
+client/recipe-share/.settings/
+client/recipe-share/*.sublime-workspace
+
+# Visual Studio Code
+client/recipe-share/.vscode/*
+client/recipe-share/!.vscode/settings.json
+client/recipe-share/!.vscode/tasks.json
+client/recipe-share/!.vscode/launch.json
+client/recipe-share/!.vscode/extensions.json
+client/recipe-share/.history/*
+
+# Miscellaneous
+client/recipe-share/.angular/cache
+client/recipe-share/.sass-cache/
+client/recipe-share/connect.lock
+client/recipe-share/coverage
+client/recipe-share/libpeerconnection.log
+client/recipe-share/testem.log
+client/recipe-share/typings
+
+# System files
+client/.DS_Store
+client/Thumbs.db
+
+#---Server---
+
+server/reports
+server/src/main/resources/application.properties
+
+server/HELP.md
+server/target/
+server/!.mvn/wrapper/maven-wrapper.jar
+server/!**/src/main/**/target/
+server/!**/src/test/**/target/
+
+### STS ###
+server/.apt_generated
+server/.classpath
+server/.factorypath
+server/.project
+server/.settings
+server/.springBeans
+server/.sts4-cache
+
+### IntelliJ IDEA ###
+server/.idea
+server/*.iws
+server/*.iml
+server/*.ipr
+
+### NetBeans ###
+server/nbproject/private/
+server/nbbuild/
+server/dist/
+server/nbdist/
+server/.nb-gradle/
+server/build/
+server/!**/src/main/**/build/
+server/!**/src/test/**/build/
+
+### VS Code ###
+server/.vscode/

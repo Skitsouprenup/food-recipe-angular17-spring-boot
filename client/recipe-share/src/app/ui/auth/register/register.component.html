@@ -1,0 +1,98 @@
+<div
+  class="flex absolute left-0 top-0 w-[100%] h-[100%] visible z-10"
+  [ngClass]="{
+    'showRegister': !mQuery.matches ? hideLogin: false,
+    'show-register-no-anim': mQuery.matches ? hideLogin: false
+  }"
+>
+
+  <!--Left Side -->
+  <div
+    class="flex flex-col py-2 justify-center items-center bg-zinc-800"
+    style="flex: 1;"
+  >
+    <h1 class="text-zinc-300">Register</h1>
+    <form
+      [formGroup]="registrationForm"
+      (ngSubmit)="registerUser()"
+      class="
+        flex flex-col p-2 w-full
+      ">
+
+      @for(item of inputList; track item) {
+        <mat-form-field class="w-full">
+          <mat-label
+            [attr.for]="item['for']"
+            class="text-gray-300"
+          >
+            {{ item['label'] }}
+          </mat-label>
+          <input
+            class="w-full" 
+            matInput
+            [type]="item['type']"
+            [name]="item['name']"
+            [placeholder]="item['placeholder']"
+            [formControlName]="item['formControlName']"
+          >
+        </mat-form-field>
+      }
+
+      <div class="flex flex-col gap-2 items-center">
+
+        <button 
+          type="submit"
+          class="w-full"
+          mat-flat-button color="accent"
+        >
+          Register
+        </button>
+        <p class="text-white">
+          Have an account? 
+          <span
+            class="hover:underline font-medium text-cyan-500 cursor-pointer"
+            (click)="goToLoginPage()"
+          >
+            Login here!
+          </span>
+        </p>
+  
+      </div>
+    </form>
+  </div>
+
+  <!--Right Side -->
+  <div class="relative register-side-bg flex-1">
+
+    <div 
+      class="relative content h-full"
+      [ngClass]="{'animateRegisterRightSide': !mQuery.matches ? !hideLogin : false}"
+    >
+
+      <img 
+        src="https://images.pexels.com/photos/7262909/pexels-photo-7262909.jpeg"
+        alt="register-page-image"
+        class="absolute h-full object-cover"
+      />
+
+      <div class="transparent-bg"></div>
+
+        <div 
+          class="
+            absolute flex flex-col justify-center 
+            items-center w-full h-full
+          "
+        >
+          <p class="text-4xl message-primary">
+            Think different, eat Different.
+          </p>
+          <p class="message-sub text-lg">
+            Come sit with us!
+          </p>
+        </div>
+
+      </div>
+
+  </div>
+
+</div>

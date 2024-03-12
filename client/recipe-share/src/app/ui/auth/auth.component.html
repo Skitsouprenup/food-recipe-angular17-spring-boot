@@ -1,0 +1,21 @@
+<div
+  class="flex justify-center h-screen items-center overflow-hidden p-2"
+>
+
+  <div class="top-level-content-page">
+    <div 
+      class="content-page flex justify-center items-center relative"
+    >
+      <app-login
+        [hideLogin]="hideLoginPage" 
+        (goToRegister)="showRegisterPage($event)" 
+      />
+
+      <app-register 
+        [hideLogin]="hideLoginPage"
+        (goToLogin)="showRegisterPage($event)"
+      />
+    </div>
+  </div>
+
+</div>
