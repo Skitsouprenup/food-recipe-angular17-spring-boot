@@ -4,9 +4,11 @@ A Simple and responsive Food Recipe sharing app created using Angular17 and Spri
 I have a demo video of this project in this [link](https://youtu.be/4Xwj0do-E3s)
 
 # Technologies Used
-* **Javascript**
+* **Typescript**
 * **Angular17**
 * **Angular Material**
+* **SCSS**
+* **TailwindCSS**
 * **Java**
 * **Spring Boot**
 * **MySQL**
