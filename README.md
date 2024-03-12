@@ -7,6 +7,8 @@ I have a demo video of this project in this [link](https://youtu.be/4Xwj0do-E3s)
 * **Javascript**
 * **Angular17**
 * **Angular Material**
+* **SCSS**
+* **TailwindCSS**
 * **Java**
 * **Spring Boot**
 * **MySQL**
